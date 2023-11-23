@@ -1,7 +1,4 @@
-body  {
-  background-image: url("Powerpoint.PNG");
-  background-color: gray;
-}
+
 
 h1 {
   text-align: center;
@@ -38,4 +35,8 @@ p {
   font-style: Century;
   font-size: 15px;
   color: White;
+}
+body  {
+  background-image: url("Powerpoint.PNG");
+  background-color: gray;
 }
