@@ -7,43 +7,43 @@ img {
   width: auto;
   height: auto;
 }
-p {
+h1 {
   text-align: center;
   font-style: Arial;
   font-size: 40px;
   color: White;
 }
-p1 {
+h2 {
   text-align: center;
   font-style: arial;
   font-size: 30px;
   color: White;
 }
-p2 {
+h3 {
   text-align: center;
   font-style: arial;
   font-size: 20px;
   color: White;
 }
-p2 {
+h4 {
   text-align: center;
   font-style: arial;
   font-size: 20px;
   color: White;
 }
-p3 {
+h5 {
   text-align: center;
   font-style: arial;
   font-size: 20px;
   color: White;
 }
-p4 {
+h6 {
   text-align: center;
   font-style: arial;
   font-size: 50px;
   color: White;
 }
-p5 {
+p {
   text-align: center;
   font-style: Century;
   font-size: 15px;
