@@ -34,3 +34,8 @@ p {
   font-size: 15px;
   color: White;
 }
+body {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
