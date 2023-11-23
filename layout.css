@@ -4,8 +4,8 @@ body {
   background-color: dimgray;
 }
 img {  
-  width: 1920;  
-  height: 1080;
+  max-width: 100%;  
+  max-height: 100%;
 }
 h1 {
   text-align: center;
