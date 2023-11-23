@@ -1,6 +1,7 @@
 body { 
-  background-color:dimgray;>
-  color: gray;
+  background-image: url("Powerpoint.PNG");
+  background-repeat: no-repeat;
+  background-color: dimgray;
 }
 
 h1 {
