@@ -37,6 +37,5 @@ p {
   color: White;
 }
 body  {
-  background-image: url("Powerpoint.PNG");
-  background-color: gray;
-}
+  background-image: url('Powerpoint.PNG');
+
