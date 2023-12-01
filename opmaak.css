@@ -23,6 +23,10 @@ body {
     line-height: 100px;
     font-size: 24px;
     cursor: pointer;
+    text-decoration: none; /* verwijder de standaard onderstreping voor links */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.3s ease;
 }
 
