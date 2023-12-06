@@ -1,30 +1,42 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  padding: 0;
+  overflow: hidden;
 }
 
-.sidebar {
+.wrapper {
+  border: 2cm solid #ccc; /* Grijze balk van 2 cm */
+  box-sizing: border-box;
+  height: calc(100vh + 4cm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; /* Achtergrondkleur binnen de balk */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.block {
+  width: 100%;
   height: 100%;
-  width: 200px;
-  position: fixed;
-  background-color: #888;
-  padding-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #00bcd4; /* Cyaan blauw */
+  color: #fff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none; /* verwijder de standaard onderstreping voor links */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
-.sidebar a {
-  padding: 10px 15px;
-  text-decoration: none;
-  font-size: 18px;
-  color: cyan; /* Cyaan blauw toegevoegd */
-  display: block;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.content {
-  margin-left: 200px;
-  padding: 16px;
+.block:hover {
+  background-color: #0097a7; /* Donkerder cyaan blauw bij hover */
 }
