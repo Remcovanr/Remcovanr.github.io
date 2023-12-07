@@ -1,42 +1,44 @@
 body {
   margin: 0;
-  padding: 0;
-  overflow: hidden;
+  font-family: 'Arial', sans-serif;
 }
 
-.wrapper {
-  border: 2cm solid #ccc;
-  box-sizing: border-box;
-  height: calc(100vh + 4cm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f0f0;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.block {
-  width: 100%;
+.sidebar {
   height: 100%;
-  background-color: #00bcd4;
-  color: #fff;
-  text-align: center;
-  line-height: 100px;
-  font-size: 24px;
-  cursor: pointer;
-  text-decoration: none;
+  width: 200px;
+  position: fixed;
+  padding-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
+  flex-direction: column;
+  justify-content: center; /* Verticaal centreren */
 }
 
-.block:hover {
-  background-color: #0097a7;
+.sidebar-left {
+  background-color: #888; /* Grijze kleur toegevoegd */
+  left: 0;
+}
+
+.sidebar-right {
+  background-color: #888; /* Maak de kleur hetzelfde als de linker sidebar */
+  right: 0;
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: cyan; /* Cyaan blauw toegevoegd */
+  display: block;
+  text-align: center; /* Horizontaal centreren */
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.content {
+  margin-left: 200px;
+  margin-right: 200px; /* Voeg rechtermarge toe voor de sidebar aan de rechterkant */
+  padding: 16px;
 }
