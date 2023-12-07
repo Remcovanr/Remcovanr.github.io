@@ -19,11 +19,6 @@ body {
   left: 0;
 }
 
-.sidebar-right {
-  background-color: #888; /* Maak de kleur hetzelfde als de linker sidebar */
-  right: 0;
-}
-
 .sidebar a {
   padding: 10px 15px;
   text-decoration: none;
