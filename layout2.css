@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.presentation-layer {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.business-layer {
+    flex: 1;
+    padding: 20px;
+    background-color: #e0e0e0;
+}
+
+.data-layer {
+    flex: 1;
+    padding: 20px;
+    background-color: #d0d0d0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Add styling for other elements as needed */
