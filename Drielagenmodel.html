@@ -20,6 +20,10 @@
             padding: 10px;
             cursor: pointer;
         }
+
+        #quiz {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -27,7 +31,7 @@
     <h1>Drielagenmodel Uitleg</h1>
 
     <div class="layer" id="presentationLayer">
-        <h2>Presentatielaag</h2>
+        <h2>Fysieke laag</h2>
         <p>Dit is de bovenste laag waar de gebruikersinterface zich bevindt.</p>
         <button onclick="showExplanation('presentationLayer')">Meer informatie</button>
     </div>
@@ -39,15 +43,38 @@
     </div>
 
     <div class="layer" id="dataLayer">
-        <h2>Gegevenslaag</h2>
+        <h2>Toepassingenlaag</h2>
         <p>Dit is de onderste laag waar de gegevens worden opgeslagen en opgehaald.</p>
         <button onclick="showExplanation('dataLayer')">Meer informatie</button>
+    </div>
+
+    <div id="quiz">
+        <h2>Quiz</h2>
+        <p>Beantwoord de volgende vraag:</p>
+        <p id="question">Wat is de functie van de logische laag?</p>
+        <input type="text" id="answer" placeholder="Jouw antwoord">
+        <button onclick="checkAnswer()">Controleer antwoord</button>
+        <p id="result"></p>
     </div>
 
     <script>
         function showExplanation(layerId) {
             var layer = document.getElementById(layerId);
             alert("Uitleg voor " + layerId + ":\n\n" + layer.querySelector('p').textContent);
+
+            // Toon de quiz nadat de uitleg is getoond
+            document.getElementById('quiz').style.display = 'block';
+        }
+
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answer').value.toLowerCase();
+            var correctAnswer = "de laag waar de logica van de applicatie wordt uitgevoerd";
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('result').textContent = "Correct!";
+            } else {
+                document.getElementById('result').textContent = "Incorrect. Probeer het opnieuw.";
+            }
         }
     </script>
 
