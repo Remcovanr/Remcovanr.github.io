@@ -3,33 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="layout2.css">
-    <title>Your App Title</title>
+    <title>Drielagenmodel App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .layer {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="presentation-layer">
-        <header>
-            <h1>Your App</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <!-- Add other navigation items as needed -->
-                </ul>
-            </nav>
-        </header>
-        
-        <!-- Content of your presentation layer goes here -->
+    <h1>Drielagenmodel Uitleg</h1>
 
+    <div class="layer" id="presentationLayer">
+        <h2>Presentatielaag</h2>
+        <p>Dit is de bovenste laag waar de gebruikersinterface zich bevindt.</p>
+        <button onclick="showExplanation('presentationLayer')">Meer informatie</button>
     </div>
-    <div class="business-layer">
-        <!-- Content of your business layer goes here -->
+
+    <div class="layer" id="logicLayer">
+        <h2>Logische laag</h2>
+        <p>Dit is de laag waar de logica van de applicatie wordt uitgevoerd.</p>
+        <button onclick="showExplanation('logicLayer')">Meer informatie</button>
     </div>
-    <div class="data-layer">
-        <!-- Content of your data layer goes here -->
+
+    <div class="layer" id="dataLayer">
+        <h2>Gegevenslaag</h2>
+        <p>Dit is de onderste laag waar de gegevens worden opgeslagen en opgehaald.</p>
+        <button onclick="showExplanation('dataLayer')">Meer informatie</button>
     </div>
-</div>
+
+    <script>
+        function showExplanation(layerId) {
+            var layer = document.getElementById(layerId);
+            alert("Uitleg voor " + layerId + ":\n\n" + layer.querySelector('p').textContent);
+        }
+    </script>
 
 </body>
 </html>
