@@ -4,36 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drielagenmodel App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        .layer {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        #quiz {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="opmaak2.css">
 </head>
 <body>
 
     <h1>Drielagenmodel Uitleg</h1>
 
-    <div class="layer" id="presentationLayer">
+    <div class="layer" id="physicalLayer">
         <h2>Fysieke laag</h2>
-        <p>Dit is de bovenste laag waar de gebruikersinterface zich bevindt.</p>
-        <button onclick="showExplanation('presentationLayer')">Meer informatie</button>
+        <p>Dit is de onderste laag waar de fysieke componenten en verbindingen zich bevinden.</p>
+        <button onclick="showExplanation('physicalLayer')">Meer informatie</button>
     </div>
 
     <div class="layer" id="logicLayer">
@@ -42,10 +22,10 @@
         <button onclick="showExplanation('logicLayer')">Meer informatie</button>
     </div>
 
-    <div class="layer" id="dataLayer">
+    <div class="layer" id="applicationLayer">
         <h2>Toepassingenlaag</h2>
-        <p>Dit is de onderste laag waar de gegevens worden opgeslagen en opgehaald.</p>
-        <button onclick="showExplanation('dataLayer')">Meer informatie</button>
+        <p>Dit is de bovenste laag waar de toepassingen en gebruikersinterfaces zich bevinden.</p>
+        <button onclick="showExplanation('applicationLayer')">Meer informatie</button>
     </div>
 
     <div id="quiz">
