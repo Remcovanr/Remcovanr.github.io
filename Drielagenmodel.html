@@ -35,10 +35,20 @@
             <input type="text" id="answer" placeholder="Jouw antwoord">
             <button onclick="checkAnswer()">Controleer antwoord</button>
             <p id="result"></p>
+            <button onclick="nextQuestion()">Volgende Vraag</button>
         </div>
     </div>
 
     <script>
+        var currentQuestionIndex = 0;
+
+        var questions = [
+            "Wat is de functie van de fysieke laag?",
+            "Wat wordt bedoeld met de logische laag?",
+            "Noem een voorbeeld van een toepassing in de toepassingenlaag.",
+            // Voeg hier nog meer vragen toe...
+        ];
+
         function showExplanation(layerId) {
             var layer = document.getElementById(layerId);
             alert("Uitleg voor " + layerId + ":\n\n" + layer.querySelector('p').textContent);
@@ -59,6 +69,17 @@
             }
 
             document.getElementById('result').textContent = resultMessage;
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                document.getElementById('question').textContent = questions[currentQuestionIndex];
+                document.getElementById('answer').value = "";
+                document.getElementById('result').textContent = "";
+            } else {
+                alert("Dat was de laatste vraag!");
+            }
         }
     </script>
 
