@@ -29,7 +29,7 @@
             <button onclick="showExplanation('applicationLayer')">Meer informatie</button>
         </div>
 
-        <div id="quiz">
+        <div id="quiz" style="display: none;">
             <h2>Quiz</h2>
             <p id="question">Wat is de functie van de fysieke laag?</p>
             <input type="text" id="answer" placeholder="Jouw antwoord">
@@ -37,11 +37,12 @@
             <p id="result"></p>
             <button onclick="nextQuestion()">Volgende Vraag</button>
         </div>
+
+        <button onclick="startQuiz()">Start Quiz</button>
     </div>
 
     <script>
         var currentQuestionIndex = 0;
-
         var questions = [
             "Wat is de functie van de fysieke laag?",
             "Wat wordt bedoeld met de logische laag?",
@@ -52,8 +53,6 @@
         function showExplanation(layerId) {
             var layer = document.getElementById(layerId);
             alert("Uitleg voor " + layerId + ":\n\n" + layer.querySelector('p').textContent);
-
-            // Toon de quiz nadat de uitleg is getoond
             document.getElementById('quiz').style.display = 'block';
         }
 
@@ -74,12 +73,23 @@
         function nextQuestion() {
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
-                document.getElementById('question').textContent = questions[currentQuestionIndex];
+                document.getElementById('question').textContent = "Vraag " + (currentQuestionIndex + 1) + ": " + questions[currentQuestionIndex];
                 document.getElementById('answer').value = "";
                 document.getElementById('result').textContent = "";
             } else {
-                alert("Dat was de laatste vraag!");
+                alert("Dat was de laatste vraag! Terug naar vraag 1.");
+                currentQuestionIndex = 0;
+                document.getElementById('question').textContent = "Vraag 1: " + questions[currentQuestionIndex];
+                document.getElementById('answer').value = "";
+                document.getElementById('result').textContent = "";
             }
+        }
+
+        function startQuiz() {
+            document.getElementById('quiz').style.display = 'block';
+            document.getElementById('question').textContent = "Vraag 1: " + questions[currentQuestionIndex];
+            document.getElementById('answer').value = "";
+            document.getElementById('result').textContent = "";
         }
     </script>
 
