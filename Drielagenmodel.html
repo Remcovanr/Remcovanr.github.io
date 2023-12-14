@@ -8,32 +8,34 @@
 </head>
 <body>
 
-    <h1>Drielagenmodel Uitleg</h1>
+    <div class="container">
+        <h1>Drielagenmodel Uitleg</h1>
 
-    <div class="layer" id="physicalLayer">
-        <h2>Fysieke laag</h2>
-        <p>Dit is de onderste laag waar de fysieke componenten en verbindingen zich bevinden.</p>
-        <button onclick="showExplanation('physicalLayer')">Meer informatie</button>
-    </div>
+        <div class="layer" id="physicalLayer">
+            <h2>Fysieke laag</h2>
+            <p>Dit is de onderste laag waar de fysieke componenten en verbindingen zich bevinden.</p>
+            <button onclick="showExplanation('physicalLayer')">Meer informatie</button>
+        </div>
 
-    <div class="layer" id="logicLayer">
-        <h2>Logische laag</h2>
-        <p>Dit is de laag waar de logica van de applicatie wordt uitgevoerd.</p>
-        <button onclick="showExplanation('logicLayer')">Meer informatie</button>
-    </div>
+        <div class="layer" id="logicLayer">
+            <h2>Logische laag</h2>
+            <p>Dit is de laag waar de logica van de applicatie wordt uitgevoerd.</p>
+            <button onclick="showExplanation('logicLayer')">Meer informatie</button>
+        </div>
 
-    <div class="layer" id="applicationLayer">
-        <h2>Toepassingenlaag</h2>
-        <p>Dit is de bovenste laag waar de toepassingen en gebruikersinterfaces zich bevinden.</p>
-        <button onclick="showExplanation('applicationLayer')">Meer informatie</button>
-    </div>
+        <div class="layer" id="applicationLayer">
+            <h2>Toepassingenlaag</h2>
+            <p>Dit is de bovenste laag waar de toepassingen en gebruikersinterfaces zich bevinden.</p>
+            <button onclick="showExplanation('applicationLayer')">Meer informatie</button>
+        </div>
 
-    <div id="quiz">
-        <h2>Quiz</h2>
-        <p id="question">Wat is de functie van de fysieke laag?</p>
-        <input type="text" id="answer" placeholder="Jouw antwoord">
-        <button onclick="checkAnswer()">Controleer antwoord</button>
-        <p id="result"></p>
+        <div id="quiz">
+            <h2>Quiz</h2>
+            <p id="question">Wat is de functie van de fysieke laag?</p>
+            <input type="text" id="answer" placeholder="Jouw antwoord">
+            <button onclick="checkAnswer()">Controleer antwoord</button>
+            <p id="result"></p>
+        </div>
     </div>
 
     <script>
@@ -48,12 +50,15 @@
         function checkAnswer() {
             var userAnswer = document.getElementById('answer').value.toLowerCase();
             var correctAnswer = "de onderste laag waar de fysieke componenten en verbindingen zich bevinden";
+            var resultMessage = "";
 
             if (userAnswer === correctAnswer) {
-                document.getElementById('result').textContent = "Correct!";
+                resultMessage = "Correct!";
             } else {
-                document.getElementById('result').textContent = "Incorrect. Probeer het opnieuw.";
+                resultMessage = "Incorrect. Het juiste antwoord is: " + correctAnswer;
             }
+
+            document.getElementById('result').textContent = resultMessage;
         }
     </script>
 
