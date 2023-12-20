@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drielagenmodel App</title>
-    <link rel="stylesheet" type="text/css" href="opmaak2.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -13,20 +13,29 @@
 
         <div class="layer" id="physicalLayer">
             <h2>Fysieke laag</h2>
-            <p>Dit is de onderste laag waar de fysieke componenten en verbindingen zich bevinden.</p>
-            <button onclick="showExplanation('physicalLayer')">Meer informatie</button>
+            <button onclick="toggleInformation('physicalInfo')">Meer informatie</button>
+            <div id="physicalInfo" class="hiddenInfo">
+                <p>Dit is de onderste laag waar de fysieke componenten en verbindingen zich bevinden.</p>
+                <p>De fysieke laag omvat hardwarecomponenten zoals servers, netwerkapparaten en fysieke verbindingen tussen deze apparaten. Het biedt de onderliggende structuur voor het functioneren van softwaretoepassingen.</p>
+            </div>
         </div>
 
         <div class="layer" id="logicLayer">
             <h2>Logische laag</h2>
-            <p>Dit is de laag waar de logica van de applicatie wordt uitgevoerd.</p>
-            <button onclick="showExplanation('logicLayer')">Meer informatie</button>
+            <button onclick="toggleInformation('logicInfo')">Meer informatie</button>
+            <div id="logicInfo" class="hiddenInfo">
+                <p>Dit is de laag waar de logica van de applicatie wordt uitgevoerd.</p>
+                <p>In de logische laag wordt de kernlogica van de softwaretoepassing geïmplementeerd. Hier vinden berekeningen, besluitvorming en verwerkingsactiviteiten plaats. Het zorgt voor de juiste werking van de software.</p>
+            </div>
         </div>
 
         <div class="layer" id="applicationLayer">
             <h2>Toepassingenlaag</h2>
-            <p>Dit is de bovenste laag waar de toepassingen en gebruikersinterfaces zich bevinden.</p>
-            <button onclick="showExplanation('applicationLayer')">Meer informatie</button>
+            <button onclick="toggleInformation('applicationInfo')">Meer informatie</button>
+            <div id="applicationInfo" class="hiddenInfo">
+                <p>Dit is de bovenste laag waar de toepassingen en gebruikersinterfaces zich bevinden.</p>
+                <p>De toepassingenlaag vertegenwoordigt de gebruikersinterfaces en toepassingen waarmee gebruikers interageren. Het omvat alles van gebruikersinterfaces op apparaten tot softwaretoepassingen.</p>
+            </div>
         </div>
 
         <div id="quiz" style="display: none;">
@@ -50,10 +59,24 @@
             // Voeg hier nog meer vragen toe...
         ];
 
-        function showExplanation(layerId) {
-            var layer = document.getElementById(layerId);
-            alert("Uitleg voor " + layerId + ":\n\n" + layer.querySelector('p').textContent);
-            document.getElementById('quiz').style.display = 'block';
+        function toggleInformation(infoId) {
+            var infoDiv = document.getElementById(infoId);
+
+            if (infoDiv.style.display === 'block') {
+                // Als het informatieblok zichtbaar is, schuif het dan in
+                infoDiv.style.animation = 'slideOut 0.5s ease-in-out';
+                setTimeout(function () {
+                    infoDiv.style.animation = ''; // Reset de animatie na 0.5 seconden
+                    infoDiv.style.display = 'none';
+                }, 500);
+            } else {
+                // Als het informatieblok verborgen is, schuif het dan uit
+                infoDiv.style.animation = 'slideIn 0.5s ease-in-out';
+                infoDiv.style.display = 'block';
+                setTimeout(function () {
+                    infoDiv.style.animation = ''; // Reset de animatie na 0.5 seconden
+                }, 500);
+            }
         }
 
         function checkAnswer() {
@@ -67,6 +90,7 @@
                 resultMessage = "Incorrect. Het juiste antwoord is: " + correctAnswer;
             }
 
+            // Toon het resultaat op dezelfde plek als waar de vraag wordt weergegeven
             document.getElementById('result').textContent = resultMessage;
         }
 
@@ -86,10 +110,16 @@
         }
 
         function startQuiz() {
-            document.getElementById('quiz').style.display = 'block';
-            document.getElementById('question').textContent = "Vraag 1: " + questions[currentQuestionIndex];
-            document.getElementById('answer').value = "";
-            document.getElementById('result').textContent = "";
+            // Controleer of alle informatieblokken zijn uitgevouwen
+            var allInfoVisible = Array.from(document.getElementsByClassName("hiddenInfo")).every(info => info.style.display === 'block');
+
+            // Toon de quiz alleen als alle informatie is uitgevouwen en gelezen
+            if (allInfoVisible) {
+                document.getElementById('quiz').style.display = 'block';
+                document.getElementById('question').textContent = "Vraag 1: " + questions[currentQuestionIndex];
+            } else {
+                alert("Lees eerst alle informatie voordat je de quiz start.");
+            }
         }
     </script>
 
