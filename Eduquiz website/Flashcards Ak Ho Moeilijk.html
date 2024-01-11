@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .flashcard.active {
+            display: flex;
+        }
+        
+        .flashcard .question,
+        .flashcard .answer {
+            font-size: 18px;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .flashcard .answer {
+            display: none;
+        }
+        
+        .flashcard.flipped .question {
+            display: none;
+        }
+        
+        .flashcard.flipped .answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="flashcard active">
+        <div class="question">1. Ulaanbataar</div>
+        <div class="answer">MONGOLIË</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">2. Funafuti</div>
+        <div class="answer">TUVALU</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">3. Abuja</div>
+        <div class="answer">NIGERIA</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">4. Belgrade</div>
+        <div class="answer">SERVIË</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">5. Quito</div>
+        <div class="answer">ECUADOR</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">6. Ljubljana</div>
+        <div class="answer">SLOVENIË</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">7. Tasjkent</div>
+        <div class="answer">OEZBEKISTAN</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">8. Suva</div>
+        <div class="answer">FIJI</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">9. Pristina</div>
+        <div class="answer">KOSOVO</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">10. Apia</div>
+        <div class="answer">SAMOA</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">11. Port of Spain</div>
+        <div class="answer">TRINIDAD EN TOBAGO</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">12. Nassau</div>
+        <div class="answer">BAHAMAS</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">13. Vaduz</div>
+        <div class="answer">LIECHTENSTEIN</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">14. Bisjkek</div>
+        <div class="answer">KIRGISTAN</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">15. Thimphu</div>
+        <div class="answer">BHUTAN</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">16. Kathmandu</div>
+        <div class="answer">NEPAL</div>
+    </div>
+        <script>
+        const flashcards = document.querySelectorAll(".flashcard");
+        let currentIndex = 0;
+        
+        function showCard(index) {
+            flashcards.forEach((card, i) => {
+                if (i === index) {
+                    card.classList.add("active");
+                } else {
+                    card.classList.remove("active");
+                }
+            });
+        }
+        
+        flashcards.forEach((card, index) => {
+            card.addEventListener("click", () => {
+                card.classList.toggle("flipped");
+                setTimeout(() => {
+                    currentIndex++;
+                    if (currentIndex < flashcards.length) {
+                        showCard(currentIndex);
+                    } else {
+                        currentIndex = 0;
+                        showCard(currentIndex);
+                    }
+                }, 2500);
+            });
+        });
+        
+        showCard(currentIndex);
+    </script>
+</body>
+</html>
