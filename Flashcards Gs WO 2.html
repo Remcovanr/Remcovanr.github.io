@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .flashcard.active {
+            display: flex;
+        }
+        
+        .flashcard .question,
+        .flashcard .answer {
+            font-size: 18px;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .flashcard .answer {
+            display: none;
+        }
+        
+        .flashcard.flipped .question {
+            display: none;
+        }
+        
+        .flashcard.flipped .answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="flashcard active">
+        <div class="question">1. Welk land was als eerste in Berlijn rond het einde van de oorlog?</div>
+        <div class="answer">Soviet Unie</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">2. Op welke dag was D-Day?</div>
+        <div class="answer">6 juni 1944</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">3. Wie was aan de macht in Italië tijdens WOII?</div>
+        <div class="answer">Mussolini</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">4. Op welke 2 steden werden kernbommen gebruikt tijdens WOII?</div>
+        <div class="answer">Hiroshima, Nagasaki</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">5. In welk jaar kwam Hitler aan de macht in Duitsland?</div>
+        <div class="answer">1933</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">6. Waarom viel Duitsland Zwitserland niet binnen?</div>
+        <div class="answer">Omdat het neutraal was en het had te veel moeite gekost vanwege de alpen.</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">7. Hoorde Griekenland bij de Geallieerden of de Asmogendheden?</div>
+        <div class="answer">Geallieerden</div>
+    </div>
+    <div class="flashcard">
+        <div class="question">8. Bij wie hoorde Italië vlak voor het einde van de oorlog?</div>
+        <div class="answer">De geallieerden</div>
+    </div>
+    <script>
+        const flashcards = document.querySelectorAll(".flashcard");
+        let currentIndex = 0;
+        
+        function showCard(index) {
+            flashcards.forEach((card, i) => {
+                if (i === index) {
+                    card.classList.add("active");
+                } else {
+                    card.classList.remove("active");
+                }
+            });
+        }
+        
+        flashcards.forEach((card, index) => {
+            card.addEventListener("click", () => {
+                card.classList.toggle("flipped");
+                setTimeout(() => {
+                    currentIndex++;
+                    if (currentIndex < flashcards.length) {
+                        showCard(currentIndex);
+                    } else {
+                        currentIndex = 0;
+                        showCard(currentIndex);
+                    }
+                }, 2500);
+            });
+        });
+        
+        showCard(currentIndex);
+    </script>
+</body>
+</html>
