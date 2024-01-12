@@ -4,20 +4,6 @@ body {
     overflow: hidden;
     background-color: #f5f5f5; /* Lichtgrijze achtergrond voor een informatica website */
 }
-
-.wrapper {
-    border: 2cm solid #ccc; /* Grijze balk van 2 cm */
-    box-sizing: border-box;
-    height: calc(100vh + 4cm);
-    display: flex;
-}
-
-.sidebar {
-    width: 2cm; /* Breedte van de linkerzijde */
-    height: 100%;
-    background-color: #333; /* Donkergrijs voor de linkerzijde */
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -54,7 +40,7 @@ body {
     font-size: 16px; /* Kleinere font size */
     cursor: pointer;
     text-decoration: none;
-    margin-bottom: 10px; /* Kleinere ruimte tussen de blokken */
+    margin-bottom: 20px; /* Kleinere ruimte tussen de blokken */
     transition: background-color 0.3s ease;
 }
 
