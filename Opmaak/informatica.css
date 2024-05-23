@@ -47,16 +47,30 @@ body {
 .block:hover {
     background-color: #0097a7; /* Donkerder cyaan blauw bij hover */
 }
+.Back {
+    background-color: black;
+    font-variant-numeric: ;
+
+}
 .Titel {
     font-size: 20;
     font: bold;
 }
 .PerInf { 
     background-color: aqua;
+    color: white;
     text-align: center;
     font-size: 14;
     font-style: italic;
 }
 .Voetbal {
     background-image: url(/Vakken/Informatica/Persoonlijke\ informatie/Voetbal.Jpeg);
+    background-color: lime;
+    color: white;
+}
+.Gamen {
+    background-image: url(/Vakken/Informatica/Persoonlijke\ informatie/Gamen.Jpeg);
+    background-color: purple;
+    color: white;
+
 }
