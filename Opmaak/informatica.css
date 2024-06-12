@@ -68,7 +68,15 @@ body {
     background-color: rgb(0, 130, 130);
     color: white;
 }
-.Hobbys {color: dodgerblue;}
+.Hobbys {
+    width: 200px; 
+    height: 100px; 
+    background-color: gray; 
+    color: dodgerblue;
+    text-align: center;
+    font-size: 16px; 
+
+}
 
 .Gamen {
     background-color: rgb(0, 130, 130);
