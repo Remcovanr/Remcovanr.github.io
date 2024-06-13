@@ -57,7 +57,7 @@ body {
     font: bold;
 }
 .PerInf { 
-    background-color: grey;
+    background-color: rgb(0, 130, 130);
     color: white;
     text-align: center;
     font-size: 14;
@@ -65,15 +65,15 @@ body {
 }
 
 .Input { 
-    background-color: grey;
+    background-color: rgb(0, 130, 130);
     color: white;
     text-align: left;
     font-size: 14;
     font-style: italic;
 }
 
-.Verwerking { 
-    background-color: grey;
+.Verwerking {
+    background-color: rgb(0, 130, 130);
     color: white;
     text-align: left;
     font-size: 14;
@@ -81,7 +81,7 @@ body {
 }
 
 .Output { 
-    background-color: grey;
+    background-color: rgb(0, 130, 130);
     color: white;
     text-align: left;
     font-size: 14;
@@ -89,7 +89,7 @@ body {
 }
 
 .Opslag { 
-    background-color: grey;
+    background-color: rgb(0, 130, 130);
     color: white;
     text-align: left;
     font-size: 14;
