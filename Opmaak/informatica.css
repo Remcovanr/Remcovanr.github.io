@@ -58,12 +58,44 @@ body {
 }
 .PerInf { 
     background-color: grey;
-    background-image: image(Gamen.jpeg);
     color: white;
-    text-align: center;
+    text-align: left;
     font-size: 14;
     font-style: italic;
 }
+
+.Input { 
+    background-color: grey;
+    color: white;
+    text-align: left;
+    font-size: 14;
+    font-style: italic;
+}
+
+.Verwerking { 
+    background-color: grey;
+    color: white;
+    text-align: left;
+    font-size: 14;
+    font-style: italic;
+}
+
+.Output { 
+    background-color: grey;
+    color: white;
+    text-align: left;
+    font-size: 14;
+    font-style: italic;
+}
+
+.Opslag { 
+    background-color: grey;
+    color: white;
+    text-align: left;
+    font-size: 14;
+    font-style: italic;
+}
+
 .Voetbal {
     background-color: rgb(0, 130, 130);
     color: white;
@@ -88,7 +120,7 @@ body {
       a:hover, a:active {
         background-color: darkgray;
       }
-      
+
 }
 .Gamen {
     background-color: rgb(0, 130, 130);
