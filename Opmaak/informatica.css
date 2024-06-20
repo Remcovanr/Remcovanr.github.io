@@ -100,7 +100,7 @@ body {
     height: 100px; 
     background-color: gray; 
     color: dodgerblue;
-    text-align: center;
+    text-align: center;     /*Tekst komt hierdoor in het midden te staan */ 
     font-size: 16px; 
     text-decoration: none;
     a:link, a:visited {
